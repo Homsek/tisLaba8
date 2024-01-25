@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Фиолетовый восьмиугольник</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    
+    <script>
+
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        
+
+        ctx.fillStyle = "purple";
+        
+
+        ctx.beginPath();
+        
+
+        var centerX = 200;
+        var centerY = 200;
+        var sideLength = 100;
+        var angle = Math.PI / 4;
+
+        ctx.moveTo(centerX + sideLength * Math.cos(0), centerY + sideLength * Math.sin(0));
+
+        for (var i = 1; i <= 8; i++) {
+            var x = centerX + sideLength * Math.cos(i * angle);
+            var y = centerY + sideLength * Math.sin(i * angle);
+            ctx.lineTo(x, y);
+        }
+
+        ctx.closePath();
+
+        ctx.fill();
+
+        ctx.stroke();
+    </script>
+</body>
+</html>

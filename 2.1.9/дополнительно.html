@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 canvas shapes</title>
+<script>
+    function draw() {
+        
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        
+        //домик
+        ctx.beginPath();
+        ctx.fillStyle = '#5D9B9B';
+        ctx.fillRect(20,250,200,150)
+        ctx.fill(); 
+
+        ctx.beginPath();
+        ctx.fillStyle = '#ee6055'
+        ctx.moveTo(5, 250);
+        ctx.lineTo(235, 250);
+        ctx.lineTo(120, 50);
+        ctx.closePath();
+        ctx.fill(); 
+
+        ctx.beginPath();
+        ctx.fillStyle ="#B2DCDC"
+        ctx.fillRect(90,300,50,100)
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#5D9B9B"
+        ctx.arc(100, 350, 5, 0, 2*Math.PI)
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle ="#51DBE5"
+        ctx.fillRect(30,285,50,70)
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "white"
+        ctx.fillRect(53, 285, 5, 70)
+        ctx.fill()
+
+        ctx.beginPath();
+        ctx.fillStyle = "white"
+        ctx.fillRect(30, 310, 50, 5)
+        ctx.fill()
+
+        //Дерево
+        ctx.beginPath();
+        ctx.fillStyle = '#e58f65';
+        ctx.fillRect(400,220, 30,180)
+        ctx.fill();
+        
+        ctx.beginPath()
+        ctx.fillStyle = '#60d394'
+        ctx.moveTo(350, 340)
+        ctx.lineTo(485, 340)
+        ctx.lineTo(415, 170)
+        ctx.closePath();
+        ctx.fill(); 
+
+        ctx.beginPath()
+        ctx.fillStyle = '#60d394'
+        ctx.moveTo(350, 290)
+        ctx.lineTo(485, 290)
+        ctx.lineTo(415, 120)
+        ctx.closePath();
+        ctx.fill(); 
+
+        ctx.beginPath()
+        ctx.fillStyle = '#60d394'
+        ctx.moveTo(350, 240)
+        ctx.lineTo(485, 240)
+        ctx.lineTo(415, 70)
+        ctx.closePath();
+        ctx.fill(); 
+
+
+        ctx.beginPath();
+        let style = "#5E7475";
+        
+
+        function changeTime(){
+            if (style == "#FFCF48"){
+                style =  "#5E7475"
+                ctx.fillStyle = `${style}`;
+                ctx.arc(240, 90, 60, 0, 2*Math.PI)
+                ctx.fill();
+                canvas.style.background = "#293C3D"
+            }
+            else{
+                style = "#FFCF48" 
+                ctx.fillStyle = `${style}`;
+                ctx.arc(240, 90, 60, 0, 2*Math.PI)
+                ctx.fill();
+                canvas.style.background = "#7FC7FF"
+            } 
+        }
+        changeTime()
+        setInterval(changeTime, 2500)
+    
+    }
+</script>
+</head>
+
+<body onload="draw();">
+<canvas id="myCanvas" width="500" height="400">
+</canvas>
+</body>
+
+</html> 
